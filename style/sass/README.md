@@ -31,6 +31,7 @@
 * Avoid using HTML tags on classes with specific class names like `.featured-articles`.
 * Avoid using comma delimited selectors.
 * Avoid nesting within a media query.
+* Use the prefix `js__` for classes that JavaScript uses to trigger behaviour. These classes should never be used for styling purposes. Example: `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
 
 ## Organization
 
