@@ -32,7 +32,7 @@ We're using a [BEM](https://en.bem.info/)-like naming convention. If you've neve
 
 We also follow these rules in order to keep our code easy to read, understand and maintain:
 
-* Use names that are as short as possible but as long as necessary.
+* Use names that are as short as possible but as long as necessary. With BEM your class attributes may and will get long. Some thing it's '*ugly*' but we're not obsessed with '*pretty*' code -- this naming convention makes our code easy to work with, saving us time and trouble, and that's all that matters. That said, we strive to write the cleanest code we can, and believe that even with BEM your code can be '*pretty*'.
 * Use the prefix `js__` for classes that JavaScript uses to trigger behaviour. These classes should never be used for styling purposes.
   * Example: `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
 * Group related class names. Prefer separating groups of classes with a double space:
