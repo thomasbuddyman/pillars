@@ -1,47 +1,30 @@
-#Style
+#Global Standards
+
+Keep your code simple and DRY, optimise for readability and maintainability.
+
+
+##General formatting rules
+
+* Use soft-tabs with 4 spaces for indentation.
+* Break long lines after 80 characters.
+* Check for, and delete, trailing whitespace. [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin for Sublime Text is your best friend here.
+* Avoid inline comments.
+* Don't include spaces after opening brackets `(`, `[` or before closing brackets `]`, `)`.
+* Don't misspell ;)
+
 
 ##Git
 
-* Avoid merge commits by using a [rebase workflow].
+* Avoid merge commits by using a [rebase workflow](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/workflow-walkthrough).
 * Squash multiple trivial commits into a single commit.
-* Write a [good commit message].
-
-[rebase workflow]: https://github.com/thoughtbot/guides/tree/master/protocol/git#merge
-[good commit message]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+* Write a [good commit message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
 
 
-##Formatting
+##Testing and debugging
 
-* Avoid inline comments.
-* Break long lines after 80 characters.
-* Delete trailing whitespace.
-* Don't include spaces after `(`, `[` or before `]`, `)`.
-* Don't misspell.
-* Don't vertically align tokens on consecutive lines.
-* If you break up an argument list, keep the arguments on their own lines and
-  closing parenthesis on its own line.
-* If you break up a hash, keep the elements on their own lines and closing curly
-  brace on its own line.
-* Indent continued lines two spaces.
-* Use an empty line between methods.
-* Use empty lines around multi-line blocks.
-* Use spaces around operators, after commas, after colons and semicolons, around
-  `{` and before `}`.
+Always make use of [CSS Source Maps](https://developer.chrome.com/devtools/docs/css-preprocessors#toc-how-css-source-maps-work)
 
 
-##Naming
+##Code Reviews
 
-* Avoid abbreviations.
-* Avoid object types in names (`user_array`, `email_method` `CalculatorClass`, `ReportModule`).
-* Name the enumeration parameter the singular of the collection.
-* Name variables, methods, and classes to reveal intent.
-* Treat acronyms as words in names (`XmlHttpRequest` not `XMLHTTPRequest`),
-  even if the acronym is the entire name (`class Html` not `class HTML`).
-* Name variables holding a factory with `_factory` (`user_factory`).
-* Name variables created by a factory after the factory (`user_factory`
-  creates `user`).
-
-##Organization
-
-* Order methods so that caller methods are earlier in the file than the methods they call.
-* Order methods so that methods are as close as possible to other methods they call.
+Refer to [code review guide by Thoughtbot](https://github.com/thoughtbot/guides/tree/master/code-review)
