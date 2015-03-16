@@ -1,12 +1,13 @@
 #Global Standards
 
 Keep your code simple and DRY, optimise for readability and maintainability.
+If you feel like a comment would help your fellow developers understand what a snippet your wrote is doing and why -- add a comment to it.
 
 
 ##General formatting rules
 
-* Use soft-tabs with 4 spaces for indentation.
-* Break long lines after 80 characters.
+* Use soft-tabs with 4 spaces for indentation. In Sublime Text menu, View > Indentation, check 'Indent using spaces' and 'Tab width: 4'.
+* Break long lines after 80 characters so your code is more comfortable to read and easy to scan.
 * Check for, and delete, trailing whitespace. [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin for Sublime Text is your best friend here.
 * Avoid inline comments.
 * Don't include spaces after opening brackets `(`, `[` or before closing brackets `]`, `)`.
