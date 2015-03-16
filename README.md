@@ -18,4 +18,6 @@ To force a modification:
 
 ====
 
-For the sake of standardisation and not inventing the wheel, elements have been borrowed from [Thoughtbot](https://github.com/thoughtbot/guides) and [Isobar](http://isobar-idev.github.io/code-standards/). 
+##Credit
+
+For the sake of standardisation and not inventing the wheel, Pillars are partially built upon elements borrowed from [Thoughtbot](https://github.com/thoughtbot/guides), [GitHub])https://github.com/styleguide/css) and [Isobar](http://isobar-idev.github.io/code-standards/), updated and adapted in accordance with Hanno team's own preferences.
