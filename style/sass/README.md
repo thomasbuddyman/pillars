@@ -22,7 +22,7 @@
 ===
 
 * Use a space between selector and `{`.
-* When grouping selectors, keep individual selectors to a single line:
+* When grouping selectors, keep individual selectors to a single line.
 * **Example:**
           
           .panel,
@@ -52,13 +52,14 @@
 ===
 
 * Use shorthand declarations.
-* Use single quotation marks for attribute selectors and property values: `input[type='text']`, `background: url('..');`.
+* Use single quotation marks for attribute selectors and property values: `input[type='text']`, `background: url('..')`.
 * Use space between property and value: `width: 20px`, not `width:20px`.
 * Use space after a `,` when declaring a value: `rgba(255, 255, 255, 0.4)`, not `rgba(255,255,255,0.5)`;
-* Don't add a unit specification after `0` values: `box-shadow: 0 0 5px 2px #eee;`, not `box-shadow: 0px 0px 5px 2px #eee;`.
-* Don't omit a `0` in decimal values: `opacity: 0.5`, not `opacty: .5`;
+* Don't add a unit specification after `0` values: `box-shadow: 0 0 5px 2px #eee`, not `box-shadow: 0px 0px 5px 2px #eee`.
+* Don't omit a `0` in decimal values: `opacity: 0.5`, not `opacty: .5`.
 * Use space around operands: `$vertical-spacing * 1.5`, not `$vertical-spacing * 1.5`.
-* Use parentheses around individual operations in shorthand declarations: `padding: ($vertical-spacing * 1.5) ($horizontal-spacing * 2);`.
+* Use parentheses around individual operations in shorthand declarations:
+  * `padding: ($vertical-spacing * 1.5) ($horizontal-spacing * 2);`.
 
 ===
 
@@ -179,7 +180,7 @@
 ##PX vs EM vs REM
 
 * Use `px` for borders, box-shadows, text-shadows, etc.
-* Use `rem` for consistent margins and paddings, if needed. Prefer 'em' for everything else.
+* Use `rem` for consistent margins and paddings, if needed. Prefer `em` for everything else.
 * Always use `em` to control font-size (set base font-size to 100%, rather than 16px, to prevent your stylesheet from overriding user's browser settings).
 * Always use `em` in Media Queries for better scaling.
 
