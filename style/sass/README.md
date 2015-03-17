@@ -1,41 +1,197 @@
 #Sass
 
-## Formatting
-* Use the *Scss* syntax.
-* Use hyphens when naming mixins, extends, classes, functions & variables: `span-columns` not `span_columns` or `spanColumns`.
-* Use space between property and value: `width: 20px` not `width:20px`.
-* Use a blank line above selector that has styles.
-* Prefer hex color codes `#000`, and set them as variables when used.
-* Use `//` for comment blocks not `/* */`.
-* Use a space between selector and `{`.
-* Use tabs for indentation
-* Use single quotation marks for attribute selectors and property values.
-* Use only lowercase, including colors.
-* Use single quotes, including imports.
-* Don't add a unit specification after `0` values, unless required by a mixin.
-* Use space around operands: `$variable * 1.5`, not `$variable*1.5`
-* Avoid in-line operations in shorthand declarations (Ex. `padding: $variable * 1.5 variable * 2`)
-* Use parentheses around individual operations in shorthand declarations: `padding: ($variable * 1.5) ($variable * 2)`
+"[Sass](http://sass-lang.com/) is the most mature, stable, and powerful professional grade CSS extension language in the world." -- and we love it.
 
-## Selectors
+
+##Organisation
+
+#####File structure
+
+* Prefer the same file structure that is found in a Rails app/views. At the very least, try logically splitting up your CSS into smaller modules -- `global.scss`, `app.scss`, `typography.scss`, `ie.scss`, `mixins.scss`, `hacks.scss`, `animations.scss`, etc -- as stylesheets tend to become quite long on bigger projects.
+
+#####Within a stylesheet
+* Use HTML structure for ordering of selectors. Don't just put styles at the bottom of the Sass file.
+
+
+##Formatting
+
+* Use the [*SCSS* syntax](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html).
+* Use only lowercase letters.
+* Use hyphens when naming mixins, extends, non-BEM classes, functions & variables: `fiesta-red`, not `fiesta_red` or `fiestaRed`.
+
+===
+
+* Use a space between selector and `{`.
+* When grouping selectors, keep individual selectors to a single line:
+* **Example:**
+          
+          .panel,
+          .panel--framed,
+          .panel__footer {
+            ..
+          }
+
+===
+
+* Indent declarations.
+* Each declaration should appear on its own line.
+* Place closing brackets of declaration blocks on a new line.
+* Separate rule sets with a blank line.
+* **Example:**
+          
+          .panel {
+            property: value;
+            property: value;
+          }
+
+          .panel--framed {
+            property: value;
+            property: value;
+          }
+
+===
+
+* Use shorthand declarations.
+* Use single quotation marks for attribute selectors and property values: `input[type='text']`, `background: url('..');`.
+* Use space between property and value: `width: 20px`, not `width:20px`.
+* Use space after a `,` when declaring a value: `rgba(255, 255, 255, 0.4)`, not `rgba(255,255,255,0.5)`;
+* Don't add a unit specification after `0` values: `box-shadow: 0 0 5px 2px #eee;`, not `box-shadow: 0px 0px 5px 2px #eee;`.
+* Don't omit a `0` in decimal values: `opacity: 0.5`, not `opacty: .5`;
+* Use space around operands: `$vertical-spacing * 1.5`, not `$vertical-spacing * 1.5`.
+* Use parentheses around individual operations in shorthand declarations: `padding: ($vertical-spacing * 1.5) ($horizontal-spacing * 2);`.
+
+===
+
+* When using BEM classes, avoid nesting *element* and *modifier* rule sets within their *block* rule set. Indent *element* rule to show relation and improve readability and scannability of the document:
+          
+          .panel {
+            padding: 2rem;
+            border-radius: 3px;
+            background: $panel-background-colour;
+          }
+
+            .panel__header {
+            
+              h2,
+              h3 {
+                margin-bottom: 1rem;
+                color: $panel-title-colour;
+              }
+              
+              p { color: $panel-text-colour; }
+            }
+
+            .panel__footer {
+              margin-top: 1rem;
+              padding-top: 1rem;
+              border-top: 1px solid $panel-border-colour;
+            }
+          
+          .panel--framed {
+            border: 2px solid $panel-border-colour;
+          }
+
+===
+
+* Place Media Queries directly within a rule set, do not create a separate `@media` sections to dump your responsive CSS in.
+* Don't nest within a Media Query.
+* **Example:**
+  * **Yes**:
+          
+          .hero {
+            padding: 3rem 0;
+            text-align: center;
+
+            @media .. {
+              padding: 6rem 0;
+            }
+            
+            @media .. {
+              padding: 12rem 0;
+            }
+            
+            h2 {
+              margin-bottom: 1rem;
+              color: #000;
+              
+              @media .. {
+                margin-bottom: 2rem;
+              }
+              
+              @media .. {
+                margin-bottom: 4rem;
+              }
+            }
+          }
+  * **No**:
+          
+          .hero {
+            padding: 3rem 0;
+            text-align: center;
+
+            h2 {
+              margin-bottom: 1rem;
+              color: #000;
+            }
+
+            @media .. {
+              padding: 6rem 0;
+              
+              h2 {
+                margin-bottom: 1rem;
+              }
+            }
+            
+            @media .. {
+              padding: 12rem 0;
+              
+              h2 {
+                margin-bottom: 4rem;
+              }
+            }
+          }
+  * PS: Check out these [useful tips on Media Query with Sass](http://davidwalsh.name/write-media-queries-sass).
+
+===
+
+* Use `//` for comment blocks not `/* */`. (`//` at the beginning of a line marks a comment in Sass. It won't go into the processed and minified stylesheet we push it to production.)
+* Avoid inline comments.
+
+
+##Variables and such
+
+* Always use variables for colours and font stacks (at least):
+  * `$fiesta-red: #dd1923;`
+  * `$font-sans-serif: 'proxima nova', helvetica, arial, sans-serif;`
+* Use meaningful names: `$panel-background-colour` not `$nice-colour` or `$pnl-bg`.
+* Prefer hex color codes `#000` (over `rgb`, `hsl` and colour names).
+* Use SCSS [(HSL) functions](http://sass-lang.com/documentation/Sass/Script/Functions.html) to tweak the base colours rather than declaring random colour values all over the place:
+          
+          .panel {
+            background: $panel-background-colour;
+          }
+
+            .panel__footer {
+              background: $darken($panel-background-colour, 5%);
+            }
+
+
+##PX vs EM vs REM
+
+* Use `px` for borders, box-shadows, text-shadows, etc.
+* Use `rem` for consistent margins and paddings, if needed. Prefer 'em' for everything else.
+* Always use `em` to control font-size (set base font-size to 100%, rather than 16px, to prevent your stylesheet from overriding user's browser settings).
+* Always use `em` in Media Queries for better scaling.
+
+
+##Specificity / Performance
 
 * Don't use ID's for style.
-* Use meaningful names: `$visual-grid-color` not `$color` or `$vslgrd-clr`.
-* Use ID and class names that are as short as possible but as long as necessary.
-* Avoid using the direct descendant selector `>`.
-* Avoid nesting more than 3 selectors deep.
-* Don't nest more than 5 selectors deep.
-* Use HTML tags on vague classes that need a qualifier like `header.application` not `.main`.
-* Avoid using the HTML tag in the class name: `section.news` not `section.news-section`.
-* Avoid using HTML tags on classes for generic markup `<div>`, `<span>`: `.widgets` not `div.widgets`.
-* Avoid using HTML tags on classes with specific class names like `.featured-articles`.
-* Avoid using comma delimited selectors.
-* Avoid nesting within a media query.
-* Use the prefix `js__` for classes that JavaScript uses to trigger behaviour. These classes should never be used for styling purposes. Example: `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
-
-## Organization
-
-* Use Normalize as a browser reset.
-* Use HTML structure for ordering of selectors. Don't just put styles at the bottom of the Sass file.
-* Prefer the same file structure that is found in a Rails app/views.
-* Avoid having files longer than 100 lines.
+* Avoid using !important.
+* Avoid unnecessary nesting.
+* Don't nest more than 2 selectors deep.
+* Don't use the HTML tag in the class name: `header.home` not `header.header--home`; `section.news` not `section.news-section`.
+* Avoid using HTML tags on classes with specific class names: `.twitter-testimonials`, `.dropdown`; not `div.twitter-testimonials`, `ul.dropdown`.
+* Consider using [quasi-qualified selectors](http://cssguidelin.es/#quasi-qualified-selectors) to avoid specificity issues.
+* Use the prefix `js__` for classes that JavaScript uses to trigger behaviour. These classes should never be used for styling purposes.
+  * **Example:** `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
