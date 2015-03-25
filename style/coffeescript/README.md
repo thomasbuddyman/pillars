@@ -1,5 +1,7 @@
 #CoffeeScript
 
+_This resource is temporary. We don't have strong CoffeeScript guidelines yet, so these have just been borrowed from Thoughtbot, temporarily. We'll expand on them later on._
+
 * Avoid conditional modifiers (lines that end with conditionals).
 * Initialize arrays using `[]`.
 * Initialize empty objects and hashes using `{}`.
