@@ -2,7 +2,7 @@
 
 ##General rules
 
-* Avoid using inline styles as they'll override any other CSS you write and are a nightmare to refactor. Styles belong in stylesheets, and if you want to quickly test a concept without polluting the main stylesheet(s), create a separate one called '*hacks*' if someone before you hasn't done that already.
+* Avoid using inline styles as they'll override any other CSS you write and are a nightmare to refactor. Styles belong in stylesheets, and if you want to quickly test a concept without polluting the main stylesheet(s), create a separate one called `_hacks.scss` if someone before you hasn't done that already.
 * Always use double quotes for attributes: `header class="hero hero--home"` not `header class=hero hero--home`
 * Separate independent HTML snippets with an empty line to keep your markup easily scannable:
 
@@ -24,9 +24,9 @@
           </nav>
       
         </body>
-* Comments are helpful and therefore commenting is encouraged. However, be sensible and avoid obvious comments. Eg: Comments next to closing tags indicating a thematic break in your markup are usually helpful in long documents.
+* Comments are helpful and therefore commenting is encouraged. Our code is being handed over to external teams, and so it is more important to comment than it would be on an internal project. However, please be sensible and avoid obvious comments. Eg: Comments next to closing tags indicating a thematic break in your markup are usually helpful in long documents.
 
-##Naming conventions
+##Naming conventions, with BEM
 
 We're using a [BEM](https://en.bem.info/)-like naming convention. If you've never heard of it or need to quickly refresh your knowledge, CSSWizardry's Harry Roberts has written a very straightforward [overview](http://cssguidelin.es/#bem-like-naming) that covers everything you need to know.
 

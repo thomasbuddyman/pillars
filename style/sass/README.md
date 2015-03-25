@@ -57,7 +57,7 @@
 * Use space after a `,` when declaring a value: `rgba(255, 255, 255, 0.4)`, not `rgba(255,255,255,0.5)`;
 * Don't add a unit specification after `0` values: `box-shadow: 0 0 5px 2px #eee`, not `box-shadow: 0px 0px 5px 2px #eee`.
 * Don't omit a `0` in decimal values: `opacity: 0.5`, not `opacty: .5`.
-* Use space around operands: `$vertical-spacing * 1.5`, not `$vertical-spacing * 1.5`.
+* Use space around operands: `$vertical-spacing * 1.5`, not `$vertical-spacing*1.5`.
 * Use parentheses around individual operations in shorthand declarations:
   * `padding: ($vertical-spacing * 1.5) ($horizontal-spacing * 2);`.
 
@@ -92,8 +92,11 @@
             border: 2px solid $panel-border-colour;
           }
 
-===
+* In short, if you've used BEM naming conventions, then nesting the rules themselves just creates over-specificity.
 
+===
+* Avoid unnecessary nesting.
+* Don't nest more than 2 selectors deep.
 * Place Media Queries directly within a rule set, do not create a separate `@media` sections to dump your responsive CSS in.
 * Don't nest within a Media Query.
 * **Example:**
@@ -155,8 +158,8 @@
 
 ===
 
-* Use `//` for comment blocks not `/* */`. (`//` at the beginning of a line marks a comment in Sass. It won't go into the processed and minified stylesheet we push it to production.)
-* Avoid inline comments.
+* Use `//` for comment blocks not `/* */`. (`//` at the beginning of a line marks a comment in Sass. It won't go into the processed and minified stylesheet which we put to production.)
+* Avoid inline comments--use new lines for comments.
 
 
 ##Variables and such
@@ -175,24 +178,26 @@
             .panel__footer {
               background: $darken($panel-background-colour, 5%);
             }
+* And if you use an HSL function to create a new colour variant, which you're going to use more than once or twice, please save that further variant into another variable. i.e. don't use `$darken($panel-background-colour, 5%)` in 10 places across your stylesheet.
 
 
 ##PX vs EM vs REM
 
 * Use `px` for borders, box-shadows, text-shadows, etc.
-* Use `rem` for consistent margins and paddings, if needed. Prefer `em` for everything else.
-* Always use `em` to control font-size (set base font-size to 100%, rather than 16px, to prevent your stylesheet from overriding user's browser settings).
-* Always use `em` in Media Queries for better scaling.
+* Use `rem` for consistent margins and paddings, if needed.
+* *Prefer* `em` for everything else. 
+* **Always** use `em` to control font-size (set base font-size to 100%, rather than 16px, to prevent your stylesheet from overriding user's browser settings).
+* **Always** use `em` in Media Queries for better scaling.
 
 
 ##Specificity / Performance
 
-* Don't use ID's for style.
-* Avoid using !important.
-* Avoid unnecessary nesting.
-* Don't nest more than 2 selectors deep.
+* Don't use #IDs for styling. Use classes instead.
+* Use #IDs as little as possible
+* **Strongly avoid** using `!important`. It should be used only in exceptional circumstances.
+* If you do use `!important`, add a comment to explain why you're doing this. If necessary, prefix that comment with FIXME or TODO for future editors. e.g. `FIXME: Forced this display mode for now, to fix a roadblock bug preventing handover, but this should be fixed later on and will probably cause issues with other navigation styling`
 * Don't use the HTML tag in the class name: `header.home` not `header.header--home`; `section.news` not `section.news-section`.
 * Avoid using HTML tags on classes with specific class names: `.twitter-testimonials`, `.dropdown`; not `div.twitter-testimonials`, `ul.dropdown`.
 * Consider using [quasi-qualified selectors](http://cssguidelin.es/#quasi-qualified-selectors) to avoid specificity issues.
 * Use the prefix `js__` for classes that JavaScript uses to trigger behaviour. These classes should never be used for styling purposes.
-  * **Example:** `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
+* **Example:** `js__accordion` would trigger an accordion behaviour, but a separate `accordion` class would be used for styling.
