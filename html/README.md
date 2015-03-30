@@ -7,22 +7,22 @@
 * Separate independent HTML snippets with an empty line to keep your markup easily scannable:
 
         <body>
-      
+
           <nav class="navbar">
-        
+
             <a href="/" class="navbar__logo">
               <img src="/assets/images/logo.svg">
             </a>
-        
+
             <a href="/features">Features</a>
             <a href="/pricing">Pricing</a>
-        
+
             <form>
               <input type="search" placeholder="Search...">
             </form>
-        
+
           </nav>
-      
+
         </body>
 * Comments are helpful and therefore commenting is encouraged. Our code is being handed over to external teams, and so it is more important to comment than it would be on an internal project. However, please be sensible and avoid obvious comments. Eg: Comments next to closing tags indicating a thematic break in your markup are usually helpful in long documents.
 
@@ -45,4 +45,3 @@ We also follow these rules in order to keep our code easy to read, understand an
 **To BEM or not to BEM?**
 
 "When you are using BEM.., it is important to remember that you don’t need to use it for everything..." -- Harry Roberts answers it very well [here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/#to-bem-or-not-to-bem).
-  

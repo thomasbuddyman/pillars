@@ -24,7 +24,7 @@
 * Use a space between selector and `{`.
 * When grouping selectors, keep individual selectors to a single line.
 * **Example:**
-          
+
           .panel,
           .panel--framed,
           .panel__footer {
@@ -38,7 +38,7 @@
 * Place closing brackets of declaration blocks on a new line.
 * Separate rule sets with a blank line.
 * **Example:**
-          
+
           .panel {
             property: value;
             property: value;
@@ -64,7 +64,7 @@
 ===
 
 * When using BEM classes, avoid nesting *element* and *modifier* rule sets within their *block* rule set. Indent *element* rule to show relation and improve readability and scannability of the document:
-          
+
           .panel {
             padding: 2rem;
             border-radius: 3px;
@@ -72,13 +72,13 @@
           }
 
             .panel__header {
-            
+
               h2,
               h3 {
                 margin-bottom: 1rem;
                 color: $panel-title-colour;
               }
-              
+
               p { color: $panel-text-colour; }
             }
 
@@ -87,7 +87,7 @@
               padding-top: 1rem;
               border-top: 1px solid $panel-border-colour;
             }
-          
+
           .panel--framed {
             border: 2px solid $panel-border-colour;
           }
@@ -101,7 +101,7 @@
 * Don't nest within a Media Query.
 * **Example:**
   * **Yes**:
-          
+
           .hero {
             padding: 3rem 0;
             text-align: center;
@@ -109,26 +109,26 @@
             @media .. {
               padding: 6rem 0;
             }
-            
+
             @media .. {
               padding: 12rem 0;
             }
-            
+
             h2 {
               margin-bottom: 1rem;
               color: #000;
-              
+
               @media .. {
                 margin-bottom: 2rem;
               }
-              
+
               @media .. {
                 margin-bottom: 4rem;
               }
             }
           }
   * **No**:
-          
+
           .hero {
             padding: 3rem 0;
             text-align: center;
@@ -140,15 +140,15 @@
 
             @media .. {
               padding: 6rem 0;
-              
+
               h2 {
                 margin-bottom: 1rem;
               }
             }
-            
+
             @media .. {
               padding: 12rem 0;
-              
+
               h2 {
                 margin-bottom: 4rem;
               }
@@ -170,7 +170,7 @@
 * Use meaningful names: `$panel-background-colour` not `$nice-colour` or `$pnl-bg`.
 * Prefer hex color codes `#000` (over `rgb`, `hsl` and colour names).
 * Use SCSS [(HSL) functions](http://sass-lang.com/documentation/Sass/Script/Functions.html) to tweak the base colours rather than declaring random colour values all over the place:
-          
+
           .panel {
             background: $panel-background-colour;
           }
@@ -185,7 +185,7 @@
 
 * Use `px` for borders, box-shadows, text-shadows, etc.
 * Use `rem` for consistent margins and paddings, if needed.
-* *Prefer* `em` for everything else. 
+* *Prefer* `em` for everything else.
 * **Always** use `em` to control font-size (set base font-size to 100%, rather than 16px, to prevent your stylesheet from overriding user's browser settings).
 * **Always** use `em` in Media Queries for better scaling.
 
