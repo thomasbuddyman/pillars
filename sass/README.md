@@ -193,7 +193,6 @@
 ##Specificity / Performance
 
 * Don't use #IDs for styling. Use classes instead.
-* Use #IDs as little as possible
 * **Strongly avoid** using `!important`. It should be used only in exceptional circumstances.
 * If you do use `!important`, add a comment to explain why you're doing this. If necessary, prefix that comment with FIXME or TODO for future editors. e.g. `FIXME: Forced this display mode for now, to fix a roadblock bug preventing handover, but this should be fixed later on and will probably cause issues with other navigation styling`
 * Don't use the HTML tag in the class name: `header.home` not `header.header--home`; `section.news` not `section.news-section`.
