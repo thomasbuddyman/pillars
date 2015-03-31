@@ -1,0 +1,222 @@
+// Mixins
+
+// Easily define an element's width and height. If height is omitted, fall back to width value
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Vendor prefixes with no extra CSS
+@mixin prefix($map, $vendors: webkit moz ms o) {
+  @each $prop, $value in $map {
+        @if $vendors {
+          @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $prop}: #{$value};
+          }
+        }
+        // Dump regular property anyway
+        #{$prop}: #{$value};
+  }
+}
+
+
+// Spacing
+
+$vertical-spacing: 2em;
+$horizontal-spacing: 0.6em;
+
+
+// Colours
+
+$hanno-red: #e23d28;
+$hanno-blue: #51c8f4;
+$hanno-grey: #748089;
+
+
+// Fonts
+
+$heading-font: 'montserrat', helvetica, arial, sans-serif;
+$body-font: 'proxima nova', helvetica, arial, sans-serif;
+
+
+// Media Query Ranges
+// (Borrowed from Foundation)
+
+$small-range: (0em, 40em);
+$medium-range: (40.063em, 64em);
+$large-range: (64.063em);
+
+$screen: "only screen";
+
+$small: "#{$screen} and (max-width: #{upper-bound($small-range)})";
+$small-up: $screen;
+
+$medium: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
+
+$large: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
+
+
+// Global styles
+
+body {
+    font: normal 400 100%/1.6em $body-font;
+    background: #fff;
+    color: #444;
+}
+
+h1,
+h2,
+h3 {
+    color: #111;
+    font-weight: 700;
+}
+
+h4,
+h5 {
+    color: #333;
+    font-weight: 600;
+}
+
+a {
+    color: $hanno-red;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid lighten($hanno-red, 8%);
+    }
+}
+
+
+// Buttons
+
+.btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 1.25em;
+    line-height: 1;
+    background: $hanno-red;
+    color: #fff;
+    border: 1px solid $darken($hanno-red, 3%);
+    // We prefer using Prefixr but a mixin like this is a good example for the purposes of this demo.
+    @include prefix(border-radius: 3px);
+
+    &:active {
+        @include prefix(box-shadow: inset 0 2px 6px 0px rgba(0, 0, 0, 0.125);
+    }
+
+    &.outline {
+        background: none;
+        color: $hanno-red;
+    }
+}
+
+.btn--grey {
+    background: $hanno-grey;
+    color: darken($hanno-grey, 15%);
+    border: 1px solid darken($hanno-grey, 3%);
+
+    &.outline {
+        color: $hanno-grey;
+    }
+}
+
+.btn--blue {
+    background: $hanno-blue;
+    border: 1px solid darken($hanno-blue, 3%);
+
+    &.outline {
+        color: $hanno-blue;
+    }
+}
+
+
+// Navigation
+
+.navbar {
+    background: $hanno-red;
+    border-bottom: 2px solid darken($hanno-red, 5%);
+
+    input[type='search'] {
+        padding: 0.25rem 0.5rem;
+        line-height: 1;
+        font-size: 1em;
+    }
+}
+
+    .navbar__links {
+        float: right;
+
+        a {
+            height: 50px;
+            margin: 0 1rem;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1;
+
+            &:hover {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+
+    .navbar__logo {
+        float: left;
+        display: block;
+        @include size(200px, 50px);
+    }
+
+    .navbar__logo--small {
+        @include size(100px, 25px);
+    }
+
+
+// Header
+
+.hero-banner {
+    padding: ($vertical-spacing * 2) 0;
+    background: $hanno-grey;
+
+    @media #{$medium} {
+        padding: ($vertical-spacing * 3) 0;
+    }
+
+    @media #{$large-up} {
+        padding: ($vertical-spacing * 4) 0;
+    }
+
+    h1 {
+        margin-bottom: $vertical-spacing / 2;
+
+        @media #{$large-up} {
+            margin-bottom: $vertical-spacing;
+        }
+    }
+}
+
+    .hero-banner__cta,
+    footer {
+        margin-top: ($vertical-spacing / 2);
+
+        @media #{$medium-up} {
+            margin-top: $vertical-spacing;
+        }
+    }
+
+
+// Homepage
+
+.hero-banner--home {
+    background: $hanno-red;
+    @include prefix(box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1));
+
+    h1 {
+        color: #fff;
+    }
+
+    h1 + p {
+        color: #fff;
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
