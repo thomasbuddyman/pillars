@@ -208,7 +208,8 @@ a {
 // Homepage
 
 .hero-banner--home {
-    background: $hanno-red;
+    background-color: $hanno-red;
+    background: url('../images/splash/hanno-valencia.jpg') no-repeat, $hanno-red;
     @include prefix(box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1));
 
     h1 {
