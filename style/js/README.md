@@ -1,4 +1,4 @@
-#JavascriptRules
+#Basic JavaScript rules
 
 **Style**
 * 2 spaces – for indentation
@@ -17,7 +17,7 @@
 **Operators**
 * Always use === instead of == – but obj == null is allowed to check null || undefined.
 
-#Advanced rules (inclues EcmaScript 6)
+#Advanced rules
 * Prefer ES6 classes over prototypes.
 * Prefer arrow functions =>, over the function keyword except when defining classes or methods.
 * Prefer template strings over string concatenation.
