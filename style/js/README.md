@@ -1,6 +1,6 @@
 #JavascriptRules
 
-*Style*
+**Style**
 * 2 spaces – for indentation
 * Single quotes for strings – except to avoid escaping
 * Use semicolons at the end of each statement
@@ -8,13 +8,13 @@
 * Space after function name function name (arg) { ... }
 * Use PascalCase for classes, lowerCamelCase for variables and functions, SCREAMING_SNAKE_CASE for constants, _singleLeadingUnderscore for private variables and functions.
 
-*Variables*
+**Variables**
 * Eliminate unused variables
 * Name the context variable self – var self = this
 * Accidental window.self usage is dissallowed (happens when var self = this is omitted)
 * Always prefix browser globals with window – except document and navigator are okay
 
-*Operators*
+**Operators**
 * Always use === instead of == – but obj == null is allowed to check null || undefined.
 
 #Advanced rules (inclues EcmaScript 6)
