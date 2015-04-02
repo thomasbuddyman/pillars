@@ -15,7 +15,7 @@ If you feel like a comment would help your fellow developers understand what a s
 
 ##General formatting rules
 
-* Use soft-tabs with 4 spaces for indentation. In Sublime Text menu, View > Indentation, check 'Indent using spaces' and 'Tab width: 4'.
+* Use soft-tabs with 2 spaces for indentation. In Sublime Text menu, View > Indentation, check 'Indent using spaces' and 'Tab width: 2'.
 * Break long lines after 80 characters so your code is more comfortable to read and easy to scan.
 * Check for, and delete, trailing whitespace. [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin for Sublime Text is your best friend here.
 * Avoid inline comments.
