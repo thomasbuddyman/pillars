@@ -1,7 +1,6 @@
 #Basic JavaScript rules
 
 **Style**
-* 2 spaces – for indentation
 * Single quotes for strings – except to avoid escaping
 * Use semicolons at the end of each statement
 * Space after keywords if (condition) { ... }
