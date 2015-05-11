@@ -15,9 +15,12 @@ If you feel like a comment would help your fellow developers understand what a s
 
 ##General formatting rules
 
+** We've created a simple [SublimeText config](https://github.com/wearehanno/pillars/blob/master/Preferences.sublime-settings) that covers general formatting rules, please use it **
+
 * Use soft-tabs with 2 spaces for indentation. In Sublime Text menu, View > Indentation, check 'Indent using spaces' and 'Tab width: 2'.
 * Break long lines after 80 characters so your code is more comfortable to read and easy to scan.
-* Check for, and delete, trailing whitespace. [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin for Sublime Text is your best friend here.
+* Check for, and delete, trailing whitespace. [UPD: No need to use the TrailingSpace package--there's a setting in SublimeText that does that for you every time you save a file]
+
 * Avoid inline comments.
 * Don't include spaces after opening brackets `(`, `[` or before closing brackets `]`, `)`.
 * Don't misspell ;)
