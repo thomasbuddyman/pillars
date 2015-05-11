@@ -4,7 +4,8 @@
 	// --------------------------------------------------------
 	
 	// Colour Scheme
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	// "color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	// "theme": "Soda Dark.sublime-theme",
 	
 	// Personal app UI preferences
 	"font_size": 16,
@@ -12,6 +13,7 @@
 	// App behaviour settings
 	"close_windows_when_empty": true,
 	"open_files_in_new_window": false,
+	// "create_window_at_startup": false,
 	"preview_on_click": false,
 	"highlight_modified_tabs": true,
 	
