@@ -50,6 +50,9 @@
 	// Ignore folders that you're not working with to keep the file tree nice and clean
 	"folder_exclude_patterns":
 	[
+		// Comment out / delete if you know what you're doing:
+		// "node_modules",
+		// "bower_components",
 		".svn",
 		".git",
 		".hg",
@@ -63,10 +66,7 @@
 		"dist",
 		"tmp",
 		"templates_c",
-		"_site",
-		// Comment out / delete if you know what you're doing:
-		// "node_modules",
-		// "bower_components"
+		"_site"
 	],
 	
 	// Ignore packages you don't need (might as well delete them, but if you want to keep them installed…)
@@ -101,5 +101,5 @@
 	// Delete white space automatically when you save a file--no need to check for trailing spaces
 	// or use a package (many of us forget to do it and it breaks the code formatting when
 	// the next person pulls from the repo and has different formatting settings)
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": true
 }
