@@ -1,0 +1,85 @@
+{
+	// Optional - replaces with your own colour scheme
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	// Ignore files with the following extensions (hide them from the file tree)
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		"*.pdf",
+		"*.jpg",
+		"*.png",
+		"*.zip",
+		"*.tar",
+		"*.gz",
+		"*.sql"
+	],
+	// Ignore folders that you're not working with to keep the file tree nice
+	// and clean
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".git",
+		".vagrant",
+		"junction",
+		// Dist (compiled assets/websites) and cache
+		".sass-cache",
+		"cache",
+		"dist",
+		"tmp",
+		"templates_c",
+		"_site",
+		// Comment out / delete if you know what you're doing:
+		// "node_modules",
+		// "bower_components"
+	],
+	// Ignore packages you don't need (might as well delete them, but if you want to keep them installed…)
+	"ignored_packages":
+	[
+  	// Example:
+  	"Vintage",
+  	// No need for trailing spaces as there's an option to trim whitespace on save
+  	"TrailingSpaces"
+	],
+	// App behaviour settings
+	"close_windows_when_empty": true,
+	"open_files_in_new_window": false,
+	"preview_on_click": false,
+	"highlight_modified_tabs": true,
+	// Formatting etc
+	"margin": 0,
+	"word_wrap": "true",
+	"rulers":
+	[
+		80
+	],
+	// Indentation
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"detect_indentation": false,
+	// Delete white space automatically when you save a file -- no need to check for trailing spaces or use a package (many of us forget to do it and it breaks the code formatting when the next person pulls from the repo and has different formatting settings)
+	"trim_trailing_white_space_on_save": true,
+	// Personal app UI preferences
+	"font_size": 16,
+}
