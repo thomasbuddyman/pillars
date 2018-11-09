@@ -1,4 +1,6 @@
-#Pillars
+**This codebase is now deprecated. We've switched to using [prettier.io](https://prettier.io) because it handles all of this beautifully. You should, too!**
+
+# Pillars
 
 These are the frontend code standards that are used by the whole Hanno team while working on projects. If a client has their own internal code standards in an existing product, these can, of course, override our own.
 
